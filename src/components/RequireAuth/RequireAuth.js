@@ -20,22 +20,22 @@ const RequireAuth = ({ children }) => {
 
     // console.log(user);
 
-    if (user.providerData[0]?.providerId ==='password' && !user.emailVerified) {
-        return <div className='text-center mt-36'>
-            <h3 className='text-red-700 text-3xl my-5'>Your Email is not verified!!</h3>
-            <h5 className='text-yellow-700 text-3xl my-5'> Please Verify your email address</h5>
-            <button
-            className='bg-[#6c8b15] hover:bg-[#4d6608] my-5 rounded-3xl py-3 px-7'
-                onClick={async () => {
-                    await sendEmailVerification();
-                    toast('Sent email');
-                }}
-            >
-                Send Verification Email Again
-            </button>
-            <ToastContainer></ToastContainer>
-        </div>
-    }
+    // if (user.providerData[0]?.providerId ==='password' && !user.emailVerified) {
+    //     return <div className='text-center mt-36'>
+    //         <h3 className='text-red-700 text-3xl my-5'>Your Email is not verified!!</h3>
+    //         <h5 className='text-yellow-700 text-3xl my-5'> Please Verify your email address</h5>
+    //         <button
+    //         className='bg-[#6c8b15] hover:bg-[#4d6608] my-5 rounded-3xl py-3 px-7'
+    //             onClick={async () => {
+    //                 await sendEmailVerification();
+    //                 toast('Sent email');
+    //             }}
+    //         >
+    //             Send Verification Email Again
+    //         </button>
+    //         <ToastContainer></ToastContainer>
+    //     </div>
+    // }
 
     return children;
 };
