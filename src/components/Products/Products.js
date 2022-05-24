@@ -9,7 +9,7 @@ const Products = () => {
     
     return (
         <div id='products'>
-            <h1 className='text-white text-5xl mb-8 font-bold shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray] mx-[1vw] py-[1vw] rounded-lg'>Trending <span className='text-[goldenrod]'>Products</span> Inventory</h1>
+            <h1 className='text-[#20242c] text-5xl mb-8 font-bold shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray] mx-[1vw] py-[1vw] rounded-lg'>Trending <span className='text-[goldenrod]'>Products</span> Inventory</h1>
             <div className='md:grid md:grid-cols-3 md:gap-5'>
                 {
                     products.map(product => <Product key={product._id} product={product}></Product>)

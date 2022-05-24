@@ -25,7 +25,7 @@ const Home = () => {
           <div className='md:flex justify-around'>
             <Reviews></Reviews>
           </div> */}
-          <Seperator></Seperator>
+          {/* <Seperator></Seperator> */}
           <Products></Products>
           <Seperator></Seperator>
           <Summary></Summary>

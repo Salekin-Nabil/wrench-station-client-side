@@ -4,12 +4,12 @@ import './Banner.css';
 
 const Banner = () => {
     return (
-        <div className='mb-[3vw]'>
+        <div className='mb-12'>
             <div className="carousel-inner relative w-full overflow-hidden">
                 <div className="carousel-item active relative float-left w-full">
                     <img
                         src={banner}
-                        className="block w-full md:h-[650px]"
+                        className="block w-full md:h-[470px]"
                         alt="..."
                     />
                     <div className="carousel-caption md:block absolute text-center">
