@@ -7,8 +7,8 @@ const Product = ({product}) => {
     const navigate = useNavigate();
     return (
         <div className=''>
-            <div className="flex justify-center my-[5vw] relative ">
-                <div className="rounded-3xl shadow-2xl shadow-[gray] hover:bg-indigo-50 max-w-sm p-5 h-[640px] bg-[#20242c] text-white mx-2 hover:text-[#20242c]  hover:shadow-[gray] hover:shadow-xl">
+            <div className="flex justify-center my-[5vw]">
+                <div className="rounded-3xl shadow-2xl shadow-[gray] hover:bg-indigo-50 max-w-sm p-2 md:p-5 h-[640px] bg-[#20242c] text-white mx-2 hover:text-[#20242c]  hover:shadow-[gray] hover:shadow-xl">
                     <a className='flex justify-center' href="#!">
                     <img className="rounded-3xl w-full h-[300px]" src={image} alt=""/>
                     </a>
