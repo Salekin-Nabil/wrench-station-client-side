@@ -7,9 +7,9 @@ import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
 import Home from './components/Home/Home';
-// import Login from './components/Login/Login';
-// import RequireAuth from './components/RequireAuth/RequireAuth';
-// import Register from './components/Register/Register';
+import Login from './components/Login/Login';
+import RequireAuth from './components/RequireAuth/RequireAuth';
+import Register from './components/Register/Register';
 // import Manage from './components/Manage/Manage';
 // import ProductDetails from './components/ProductDetails/ProductDetails';
 // import AddItems from './components/AddItems/AddItems';
@@ -28,9 +28,9 @@ function App() {
         <Route path='/Manage' element={<RequireAuth><Manage></Manage></RequireAuth>}></Route>
         <Route path='/Add' element={<RequireAuth><AddItems></AddItems></RequireAuth>}></Route>
         <Route path='/MyItems' element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route>
-        <Route path='/About' element={<About></About>}></Route>
+        <Route path='/About' element={<About></About>}></Route> */}
         <Route path='/Login' element={<Login></Login>}></Route>
-        <Route path='/Register' element={<Register></Register>}></Route> */}
+        <Route path='/Register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer> 
