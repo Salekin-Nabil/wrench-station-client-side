@@ -1,10 +1,11 @@
 // import Address from '../Address/Address';
 import Banner from '../Banner/Banner';
 // import ContactUs from '../ContactUs/ContactUs';
-// import Products from '../Products/Products';
+import Products from '../Products/Products';
 // import Quotes from '../Quotes/Quotes';
 // import Reviews from '../Reviews/Reviews';
 import Seperator from '../Seperator/Seperator';
+import Summary from '../Summary/Summary';
 // import Video from '../Video/Video';
 // import Services from '../Services/Services';
 import './Home.css';
@@ -25,9 +26,11 @@ const Home = () => {
             <Reviews></Reviews>
           </div> */}
           <Seperator></Seperator>
-          {/* <Products></Products>
+          <Products></Products>
           <Seperator></Seperator>
-          <Video></Video>
+          <Summary></Summary>
+          <Seperator></Seperator>
+          {/* <Video></Video>
           <Seperator></Seperator>
           <Address></Address>
           <Seperator></Seperator>
