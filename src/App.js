@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 // import Blogs from './components/Blogs/Blogs';
 // import About from './components/About/About';
 // import NotFound from './components/NotFound/NotFound';
-// import Footer from './components/Footer/Footer';
+import Footer from './components/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
 // import Login from './components/Login/Login';
 // import RequireAuth from './components/RequireAuth/RequireAuth';
@@ -32,8 +32,8 @@ function App() {
         <Route path='/Login' element={<Login></Login>}></Route>
         <Route path='/Register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
-      </Routes>
-      <Footer></Footer> */}
+      </Routes>*/}
+      <Footer></Footer> 
       <ToastContainer />
     </div>
   );
