@@ -7,9 +7,9 @@ import Loading from '../Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
-import axios from 'axios';
+// import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
-// import useToken from '../../Hooks/useToken';
+import useToken from '../../Hooks/useToken';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -27,18 +27,18 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-    // const [token, setToken] = useToken(user);
+    const [token, setToken] = useToken(user);
 
     if (loading) {
         return <Loading></Loading>
     }
 
-    if (user) {
-        navigate(from, { replace: true });
-    }
-    // if (token) {
+    // if (user) {
     //     navigate(from, { replace: true });
     // }
+    if (token) {
+        navigate(from, { replace: true });
+    }
 
     if (error) {
         errorElement = <p className='text-[#20242c] bg-red-700 my-4 text-lg'>Error: {error?.message}</p>
@@ -72,7 +72,7 @@ const Login = () => {
     return (
         <div className='container w-50 mx-auto mt-[4vw] mb-[300px]  md:mb-0'>
         <Helmet>
-            <title>Gymniac-Login</title>
+            <title>Wrench Station-Login</title>
         </Helmet>
             <h1 className='md:text-[4vw] text-3xl md:py-6 text-[#20242c] font-bold shadow-2xl shadow-[gray] mx-16'>Login <span className='text-[goldenrod]'>Form</span></h1>
             <section className="h-screen mb-32">
@@ -120,8 +120,7 @@ const Login = () => {
                             <p
                             onClick={resetPassword}
                             className="text-[goldenrod] hover:text-yellow-400 focus:text-yellow-500 active:text-[goldenrod] duration-200 transition ease-in-out cursor-pointer"
-                            >Forgot password?</p
-                            >
+                            >Forgot password?</p>
                         </div>
                         <button
                             type="submit"

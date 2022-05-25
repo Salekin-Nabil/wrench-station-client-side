@@ -7,7 +7,7 @@ import Loading from '../Loading/Loading';
 import './Register.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { Helmet } from 'react-helmet-async';
-// import useToken from '../../Hooks/useToken';
+import useToken from '../../Hooks/useToken';
 
 const Register = () => {
     const [agree, setAgree] = useState(false);
@@ -15,26 +15,26 @@ const Register = () => {
         createUserWithEmailAndPassword,
         user,
         loading,
-        error,
+        error
     ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    // const [token, setToken] = useToken(user);
+    const [token, setToken] = useToken(user);
 
     const navigate = useNavigate();
 
     if(loading || updating){
         return <Loading></Loading>
-    }
+    };
 
-    if (user) {
-        navigate('/home');  
-    }
-
-    // if (token) {
+    // if (user) {
     //     navigate('/home');  
     // }
+
+    if (token) {
+        navigate('/');  
+    };
 
     const handleRegister = async (event) => {
         event.preventDefault();
@@ -44,12 +44,12 @@ const Register = () => {
 
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
-    }
+    };
 
     return (
         <div className='container w-50 mx-auto mt-[4vw]'>
         <Helmet>
-            <title>Gymniac-Register</title>
+            <title>Wrench Station-Register</title>
         </Helmet>
             <h1 className='md:text-[4vw] md:py-6 text-2xl text-[#20242c] font-bold shadow-2xl shadow-[gray] mx-16'>Registration <span className='text-[golden]'>Form</span></h1>
             <section className="h-screen mb-96">
@@ -103,8 +103,7 @@ const Register = () => {
                             </div>
                             <p
                             className="text-[golden] hover:text-yellow-400 focus:text-yellow-500 active:text-[golden] duration-200 transition ease-in-out cursor-pointer"
-                            >Update profile?</p
-                            >
+                            >Update profile?</p>
                         </div>
                         <button
                             disabled={!agree}

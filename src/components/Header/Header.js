@@ -16,6 +16,7 @@ const Header = () => {
 
     const [user] = useAuthState(auth);
 
+    console.log(user);
     const handleSignOut = () =>{
         signOut(auth);
     }
@@ -42,6 +43,7 @@ const Header = () => {
                                 <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-white hover:text-black md:font-bold border-b-2 border-white hover:shadow-xl hover:shadow-[gray]' to="/MyItems">MY_ITEMS</CustomLink>
                                 <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-white hover:text-black md:font-bold border-b-2 border-white hover:shadow-xl hover:shadow-[gray]' to="/Blogs">BLOGS</CustomLink>
                                 <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-white hover:text-black md:font-bold border-b-2 border-white hover:shadow-xl hover:shadow-[gray]' to="/About">ABOUT</CustomLink> */}
+                                <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-gray-600 hover:text-gray-900 md:font-bold border-b-4 border-white' to='/Dashboard'>Dashboard</CustomLink>
                                 <CustomLink onClick={handleSignOut} className='mr-[2vw] md:py-[5px] px-[20px] text-gray-600 hover:text-gray-900 md:font-bold border-b-4 border-white' to='/Login'>LOG OUT</CustomLink>
                             </div>
                         :

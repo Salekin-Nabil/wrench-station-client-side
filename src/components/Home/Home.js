@@ -1,3 +1,4 @@
+import Helmet from 'react-helmet';
 import Address from '../Address/Address';
 import Banner from '../Banner/Banner';
 import ContactUs from '../ContactUs/ContactUs';
@@ -13,6 +14,9 @@ import './Home.css';
 const Home = () => {
     return (
         <div className=''>
+          <Helmet>
+            <title>Wrench Station-Home Page</title>
+          </Helmet>
           <Banner></Banner>
           {/* <div className='md:flex justify-around'>
             <Services></Services>

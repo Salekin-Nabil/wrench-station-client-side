@@ -103,7 +103,7 @@ const ContactUs = () => {
                                 <input type="checkbox"
                                     className="form-check-input appearance-none h-4 w-4 border border-[goldenrod] rounded-sm bg-white checked:bg-[goldenrod] checked:border-[goldenrod] focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
                                 />
-                                <label className="form-check-label inline-block text-[#20242c]" for="exampleCheck87">Send me a copy of this message</label>
+                                <label className="form-check-label inline-block text-[#20242c]" htmlFor="exampleCheck87">Send me a copy of this message</label>
                                 </div>
                                 <button type="submit" className="
                                 w-full
