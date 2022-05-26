@@ -48,11 +48,15 @@ const MyReviews = () => {
             </Helmet>
              <h1 className='text-[goldenrod] text-5xl mb-8 font-bold shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray] mx-[1vw] py-[1vw] rounded-lg'>My <span className='text-[#20242c]'>Review</span></h1>
              <div className='flex items-center'>
+                <div className='hidden md:block'>
+                    <img src={logo} alt=''/>
+                    <h3 className='text-4xl font-semibold text-[#20242c]'><span className='bg-[#20242c] px-1 rounded text-white mb-4 md:mb-0'>Wrench</span>Station</h3>
+                </div>
                 <div className="block p-6 rounded-xl shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray] bg-white w-full md:mx-1 mb-8">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <p className='text-2xl font-semibold mb-4 text-[goldenrod]'>Add a Review</p>
                         <div className="form-group mb-6 w-full mr-2">
-                            <input type="text" className="form-control block
+                            <input type="text" className="block
                                     w-full
                                     px-3
                                     py-1.5
@@ -70,7 +74,7 @@ const MyReviews = () => {
                                     value={displayName} readOnly required/>
                         </div>
                         <div className="form-group mb-6 w-full">
-                            <input type="email" className="form-control block
+                            <input type="email" className="block
                                     w-full
                                     px-3
                                     py-1.5
@@ -142,7 +146,7 @@ const MyReviews = () => {
                                 shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray]
                                 transition
                                 duration-150
-                                ease-in-out">Send</button>
+                                ease-in-out">Submit Review</button>
                     </form>
                 </div>
                 <div className='hidden md:block'>

@@ -189,7 +189,7 @@ const ProductDetails = () => {
                             <p className='text-2xl font-semibold mb-4 text-[goldenrod]'>Buyer Details</p>
                             <div className='flex justify-center'>
                                 <div className="form-group mb-6 w-full mr-2">
-                                    <input type="text" className="form-control block
+                                    <input type="text" className="block
                                         w-full
                                         px-3
                                         py-1.5
@@ -207,7 +207,7 @@ const ProductDetails = () => {
                                         value={displayName} readOnly required/>
                                     </div>
                                     <div className="form-group mb-6 w-full">
-                                    <input type="email" className="form-control block
+                                    <input type="email" className="block
                                         w-full
                                         px-3
                                         py-1.5

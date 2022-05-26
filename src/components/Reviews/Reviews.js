@@ -14,7 +14,7 @@ const Reviews = () => {
     
     return (
         <div id='services'>
-            <h1 className='text-3xl font-bold mt-[5vw] text-[#20242c]  shadow-2xl shadow-[gray]'>Client's <span className='text-[goldenrod]'>Opinion</span></h1>
+            <h1 className='text-[#20242c] text-5xl mb-8 font-bold shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray] mx-[1vw] py-[1vw] rounded-lg'>Client's <span className='text-[goldenrod]'>Opinion</span></h1>
             <div className='md:grid md:grid-cols-3 md:gap-5'>
                 {
                     data.map(review => <Review key={review._id} review={review}></Review>)
