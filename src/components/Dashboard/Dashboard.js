@@ -4,6 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartArrowDown, faCircleUser, faEnvelopeOpenText, faUser } from '@fortawesome/free-solid-svg-icons';
+import Helmet from 'react-helmet';
 
 const Dashboard = () => {
     const [open, setOpen] = useState(false);
@@ -12,7 +13,11 @@ const Dashboard = () => {
 
     return (
         <div className='md:flex'>
+        <Helmet>
+            <title>Wrench Station-Dashboard Profile</title>
+        </Helmet>
             <div className="w-60 h-auto shadow-md bg-white hidden lg:block" id="sidenavSecExample">
+                <div className=''>
                 <div className="pt-4 pb-2 px-6">
                     <a href="#!">
                         <div className="relative px-1">
@@ -49,6 +54,7 @@ const Dashboard = () => {
                         </Link>
                     </li>
                 </ul>
+                </div>
             </div>
             <div className=''>
                 <h1 className='md:text-[4vw] text-3xl md:py-6 text-[#20242c] font-bold md:w-96 md:mx-auto my-8'>Dash<span className='text-[goldenrod]'>board</span></h1>

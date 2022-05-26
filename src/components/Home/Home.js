@@ -3,6 +3,7 @@ import Address from '../Address/Address';
 import Banner from '../Banner/Banner';
 import ContactUs from '../ContactUs/ContactUs';
 import Products from '../Products/Products';
+import Reviews from '../Reviews/Reviews';
 // import Quotes from '../Quotes/Quotes';
 // import Reviews from '../Reviews/Reviews';
 import Seperator from '../Seperator/Seperator';
@@ -34,6 +35,7 @@ const Home = () => {
           <Seperator></Seperator>
           <Summary></Summary>
           <Seperator></Seperator>
+          <Reviews></Reviews>
           {/* <Video></Video> */}
           <Seperator></Seperator>
           <Address></Address>
