@@ -25,7 +25,7 @@ const Header = () => {
         <nav className='bg-white py-4  shadow-2xl shadow-[gray] sticky-top '>
             <div className='flex items-center'>
                 <div onClick={()=>setOpen(!open)} className='w-20 h-20 md:hidden ml-4 mt-[40px]'>
-                    {open ? <XIcon className='text-black'></XIcon> : <MenuIcon className='text-black'></MenuIcon>}
+                    {open ? <XIcon className='text-[#20242c]'></XIcon> : <MenuIcon className='text-[#20242c]'></MenuIcon>}
                 </div>
                 <div onClick={()=>navigate('/')} className='flex items-center md:justify-start justify-center md:pl-8 cursor-pointer'>
                     <h4 className='text-[26px] font-semibold text-[#20242c]'><span className='bg-[#20242c] px-1 rounded text-white'>Wrench</span>Station</h4>

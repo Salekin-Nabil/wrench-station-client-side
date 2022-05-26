@@ -5,7 +5,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className="text-center bg-[#20242c] text-white md:mt-[200px]">
+        <footer className="text-center bg-[#20242c] text-white mt-[200px] md:mt-0">
             <div className="container px-6 pt-6">
                 <div className="flex justify-center mb-6">
                 <a href="#!" type="button" className="rounded-full border-2 border-[goldenrod] text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1 shadow-lg shadow-white hover:shadow-xl hover:shadow-white">
