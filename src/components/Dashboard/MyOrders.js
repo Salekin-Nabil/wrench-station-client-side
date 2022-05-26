@@ -38,29 +38,29 @@ const MyOrders = () => {
             <title>Wrench Station-My Orders</title>
         </Helmet>
             <h1 className='text-[goldenrod] text-5xl mb-8 font-bold shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray] mx-[1vw] py-[1vw] rounded-lg'>My <span className='text-[#20242c]'>Orders</span></h1>
-            <div class="flex flex-col mx-6 ">
-                <div class="overflow-x-auto sm:-mx-2 lg:-mx-4 ">
-                    <div class="py-2 inline-block min-w-full sm:px-4 lg:px-6 ">
-                    <div class="overflow-hidden rounded-lg shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray]">
-                        <table class="min-w-full ">
-                            <thead class="bg-gray-100 border-b">
+            <div className="flex flex-col mx-6 ">
+                <div className="overflow-x-auto sm:-mx-2 lg:-mx-4 ">
+                    <div className="py-2 inline-block min-w-full sm:px-4 lg:px-6 ">
+                    <div className="overflow-hidden rounded-lg shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray]">
+                        <table className="min-w-full ">
+                            <thead className="bg-gray-100 border-b">
                                 <tr>
-                                    <th scope="col" class="text-lg font-bold text-[#20242c] px-6 py-4 ">
+                                    <th scope="col" className="text-lg font-bold text-[#20242c] px-6 py-4 ">
                                         Product Image
                                     </th>
-                                    <th scope="col" class="text-lg font-bold text-[#20242c] px-6 py-4 ">
+                                    <th scope="col" className="text-lg font-bold text-[#20242c] px-6 py-4 ">
                                         Product Name
                                     </th>
-                                    <th scope="col" class="text-lg font-bold text-[#20242c] px-6 py-4 ">
+                                    <th scope="col" className="text-lg font-bold text-[#20242c] px-6 py-4 ">
                                         Bill
                                     </th>
-                                    <th scope="col" class="text-lg font-bold text-[#20242c] px-6 py-4 ">
+                                    <th scope="col" className="text-lg font-bold text-[#20242c] px-6 py-4 ">
                                         Ordered Quantity
                                     </th>
-                                    <th scope="col" class="text-lg font-bold text-[#20242c] px-6 py-4 ">
+                                    <th scope="col" className="text-lg font-bold text-[#20242c] px-6 py-4 ">
                                         Status
                                     </th>
-                                    <th scope="col" class="text-lg font-bold text-[#20242c] px-6 py-4 ">
+                                    <th scope="col" className="text-lg font-bold text-[#20242c] px-6 py-4 ">
                                         Action
                                     </th>
                                 </tr>
@@ -69,23 +69,23 @@ const MyOrders = () => {
                             {
                                 orders.map(order =>
                                 
-                                    <tr key={order._id} class="bg-[#20242c] border-b transition duration-300 ease-in-out hover:bg-gray-400">
-                                        <td class="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap flex justify-center">
+                                    <tr key={order._id} className="bg-[#20242c] border-b transition duration-300 ease-in-out hover:bg-gray-400">
+                                        <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap flex justify-center">
                                             <img className="rounded-lg w-full md:w-1/6" src={order.productImage} alt=""/>
                                         </td>
-                                        <td class="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
+                                        <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
                                             {order.productName}
                                         </td>
-                                        <td class="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
+                                        <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
                                             ${order.bill}.00
                                         </td>
-                                        <td class="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
+                                        <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
                                             {order.quantity}
                                         </td>
-                                        <td class="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
+                                        <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
                                             {order.status}
                                         </td>
-                                        <td class="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
+                                        <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
                                             <button className='rounded-full bg-red-700 text-white py-3 px-4'><FontAwesomeIcon className='text-white' icon={faTrashCan}></FontAwesomeIcon></button>
                                         </td>
                                     </tr>
@@ -97,7 +97,6 @@ const MyOrders = () => {
                     </div>
                 </div>
             </div>
-                <button onClick={()=>navigate('/Add')} className='rounded-3xl text-white text-2xl font-semibold bg-[#607c14] active:bg-[#506a09] focus:bg-[#4a6402] hover:bg-[#344506] shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray] mt-20 py-2 px-20 md:px-60'>Add New Item</button>
         </div>
     );
 };
