@@ -17,6 +17,7 @@ import Profile from './components/Dashboard/Profile';
 import MyReviews from './components/Dashboard/MyReviews';
 import MyOrders from './components/Dashboard/MyOrders';
 import MakeAdmin from './components/Dashboard/MakeAdmin';
+import RequireAdmin from './components/RequireAdmin/RequireAdmin';
 // import AddItems from './components/AddItems/AddItems';
 // import MyItems from './components/MyItems/MyItems';
 
@@ -33,7 +34,7 @@ function App() {
           <Route index element={<Profile></Profile>}></Route>
           <Route path='/Dashboard/Reviews' element={<MyReviews></MyReviews>}></Route>
           <Route path='/Dashboard/Orders' element={<MyOrders></MyOrders>}></Route>
-          <Route path='/Dashboard/MakeAdmin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='/Dashboard/MakeAdmin' element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
         </Route>
         {/* <Route path='/Manage' element={<RequireAuth><Manage></Manage></RequireAuth>}></Route>
         <Route path='/Add' element={<RequireAuth><AddItems></AddItems></RequireAuth>}></Route>

@@ -20,16 +20,17 @@ const Dashboard = () => {
     useEffect( () => {
         const getUser = async() =>{
             
-            const url = `http://localhost:5000/userAll/${email}`;
+            const url = `http://localhost:5000/user/${email}`;
             try{
                 const {data} = await axiosPrivate.get(url);
-                setUserInfo(data);
+                console.log(data[0]);
+                setUserInfo(data[0]);
             }
             catch(error){
                 console.log(error.message);
                 if(error.response.status === 401 || error.response.status === 403){
                     signOut(auth);
-                    navigate('/Login')
+                    navigate('/Login');
                 }
             }
         }
@@ -79,7 +80,9 @@ const Dashboard = () => {
                         </Link>
                     </li>
                 </ul>
-                <ul className="relative px-1">
+                {
+                    userInfo?.admin &&
+                    <ul className="relative px-1">
                     <li className="relative">
                         <Link to="/Dashboard/MakeAdmin" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
                         <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faShieldHalved}></FontAwesomeIcon>
@@ -87,6 +90,7 @@ const Dashboard = () => {
                         </Link>
                     </li>
                 </ul>
+                }
                 </div>
             </div>
             <div className=''>
@@ -120,7 +124,9 @@ const Dashboard = () => {
                         </Link>
                     </li>
                 </ul>
-                <ul className="relative px-1">
+                {
+                    userInfo?.admin &&
+                    <ul className="relative px-1">
                     <li className="relative">
                         <Link to="/Dashboard/MakeAdmin" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
                         <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faShieldHalved}></FontAwesomeIcon>
@@ -128,6 +134,7 @@ const Dashboard = () => {
                         </Link>
                     </li>
                 </ul>
+                }
                 </div>
                 <div className='md:hidden mt-4'>
                     <Outlet></Outlet>

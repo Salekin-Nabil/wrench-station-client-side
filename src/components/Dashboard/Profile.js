@@ -37,7 +37,6 @@ const Profile = () => {
             const url = `http://localhost:5000/user/${email}`;
             try{
                 const {data} = await axiosPrivate.get(url);
-                console.log(data[0]);
                 setUserInfo(data[0]);
             }
             catch(error){
