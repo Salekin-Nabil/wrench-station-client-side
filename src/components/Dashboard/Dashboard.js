@@ -1,15 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartArrowDown, faCircleUser, faEnvelopeOpenText, faShieldHalved, faUser, faUserShield } from '@fortawesome/free-solid-svg-icons';
 import Helmet from 'react-helmet';
+import axiosPrivate from '../../api/axiosPrivate';
+import { signOut } from 'firebase/auth';
 
 const Dashboard = () => {
     const [open, setOpen] = useState(false);
     const [user] = useAuthState(auth);
+    const {email} = user;
     const {displayName} = user;
+
+    const [userInfo, setUserInfo] = useState({});
+    const navigate = useNavigate();
+
+    useEffect( () => {
+        const getUser = async() =>{
+            
+            const url = `http://localhost:5000/userAll/${email}`;
+            try{
+                const {data} = await axiosPrivate.get(url);
+                setUserInfo(data);
+            }
+            catch(error){
+                console.log(error.message);
+                if(error.response.status === 401 || error.response.status === 403){
+                    signOut(auth);
+                    navigate('/Login')
+                }
+            }
+        }
+        getUser();
+    },[user]);
 
     return (
         <div className='md:flex'>
