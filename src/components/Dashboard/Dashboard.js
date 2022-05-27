@@ -103,14 +103,6 @@ const Dashboard = () => {
                     <>
                         <ul className="relative px-1">
                             <li className="relative">
-                                <Link to="/Dashboard" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
-                                    <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faUser}></FontAwesomeIcon>
-                                    <span>My Profile</span>
-                                </Link>
-                            </li>
-                        </ul>
-                        <ul className="relative px-1">
-                            <li className="relative">
                                 <Link to="/Dashboard/Orders" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
                                 <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faCartArrowDown}></FontAwesomeIcon>
                                     <span>My Orders</span>

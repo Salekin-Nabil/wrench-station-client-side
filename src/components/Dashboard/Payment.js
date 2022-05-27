@@ -6,6 +6,7 @@ import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 import CheckoutForm from './CheckoutForm';
+import logo from '../../images/logo.png';
 
 const stripePromise = loadStripe('pk_test_51L4A74Hfd0Dg1f5ftju9pevdLs2UDTt8fG3yke03kDb7IMokWd8gl2hJCwd4W6f9Z0PuxdncyjxeWvVTApIbs6Ks00rbnCSs70');
 
@@ -30,8 +31,14 @@ const Payment = () => {
                 <title>Wrench Station-Payment</title>
             </Helmet>
             <h1 className='text-[#20242c] text-5xl mb-8 font-bold shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray] mx-[1vw] py-[1vw] rounded-lg'>Payment <span className='text-[goldenrod]'>Section</span></h1>
-            <div class="flex justify-center mb-8">
-                <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm w-full text-left">
+            <div className='flex items-center'>
+                <div className='hidden md:block'>
+                    <img src={logo} alt=''/>
+                    <h3 className='text-4xl font-semibold text-[#20242c]'><span className='bg-[#20242c] px-1 rounded text-white mb-4 md:mb-0'>Wrench</span>Station</h3>
+                </div>
+            <div className='mt-12 bg-[#20242c] p-2 rounded-lg h-[440px]'>
+            <div class="flex justify-center mb-16">
+                <div class="block p-6 rounded-lg shadow-xl shadow-white hover:shadow-lg hover:shadow-white bg-white max-w-sm w-full text-left">
                     <h5 class="text-[goldenrod] font-bold text-2xl leading-tight mb-2">Hello, {order.buyerName}!</h5>
                     <p class="text-[#20242c] text-xl mb-4">
                         You have ordered <span className='text-[goldenrod] font-semibold'>{order.quantity} {order.productName}</span>
@@ -39,15 +46,20 @@ const Payment = () => {
                     <p class="text-[#20242c] text-xl mb-4">
                         Please pay <span className='text-[goldenrod] font-semibold'>${order.bill}.00</span>
                     </p>
-                    {/* <button type="button" class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Button</button> */}
                 </div>
             </div>
             <div class="flex justify-center mb-24">
-                <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm w-full text-left">
+                <div class="block p-6 rounded-lg shadow-xl shadow-white hover:shadow-lg hover:shadow-white bg-white max-w-sm w-full text-left">
                     <Elements stripe={stripePromise}>
                         <CheckoutForm order={order} />
                     </Elements>
                 </div>
+            </div>
+            </div>
+            <div className='hidden md:block'>
+                    <img src={logo} alt=''/>
+                    <h3 className='text-4xl font-semibold text-[#20242c]'><span className='bg-[#20242c] px-1 rounded text-white mb-4 md:mb-0'>Wrench</span>Station</h3>
+            </div>
             </div>
         </div>
     );

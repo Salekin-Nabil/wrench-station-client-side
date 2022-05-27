@@ -123,7 +123,7 @@ const CheckoutForm = ({ order }) => {
                         },
                     }}
                 />
-                <button className='px-5 font-bold py-2 bg-[goldenrod] hover:bg-[#a0760b] rounded-xl text-white mt-8' type="submit" disabled={!stripe || !clientSecret || success}>
+                <button className='px-5 font-bold py-2 shadow-xl shadow-[gray] hover:shadow-lg hover:shadow-[gray] bg-[goldenrod] hover:bg-[#a0760b] rounded-xl text-white mt-8' type="submit" disabled={!stripe || !clientSecret || success}>
                     Pay
                 </button>
             </form>
