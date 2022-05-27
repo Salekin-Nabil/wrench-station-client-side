@@ -78,7 +78,7 @@ const Profile = () => {
     return (
         <div>
             <Helmet>
-                <title>Wrench Station-Add a Review</title>
+                <title>Wrench Station-My Profile</title>
             </Helmet>
              <h1 className='text-[goldenrod] text-5xl mb-8 font-bold shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray] mx-[1vw] py-[1vw] rounded-lg'>My <span className='text-[#20242c]'>Profile</span></h1>
              <div className='flex items-center'>

@@ -14,7 +14,7 @@ const Product = ({product}) => {
                     </a>
                     <h4 className='text-[20px] font-bold mt-[20px]'>{name}</h4>
                     <p className='text-[16px] mt-[20px] font-medium'>{description}</p>
-                    <h3 className='text-[24px] font-bold mt-[20px]'>Price: ${price}.00</h3>
+                    <h3 className='text-[24px] font-bold mt-[20px]'>Price: ${price}.00/PC</h3>
                     <h4 className='text-[18px] font-bold mt-[10px]'>Available Stock: {quantity}</h4>
                     <h4 className='text-[20px] font-bold mt-[10px]'>Atleast Order: {minQuantity}</h4>
                     

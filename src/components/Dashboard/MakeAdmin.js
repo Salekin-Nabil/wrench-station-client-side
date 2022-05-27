@@ -115,7 +115,7 @@ const MakeAdmin = () => {
                                                 info?.admin ? 
                                                 <h4 className=''>Admin</h4>
                                                 :
-                                                <button onClick={()=>handleMakeAdmin(info.email)} className='rounded-2xl bg-[goldenrod] text-white py-2 px-3 hover:bg-[#b9880d]'>Make Admin</button>
+                                                <button onClick={()=>handleMakeAdmin(info.email)} className='rounded-3xl bg-[goldenrod] text-white py-1 px-3 hover:bg-[#b9880d]'>Make Admin</button>
                                             }
                                         </td>
                                     </tr>
