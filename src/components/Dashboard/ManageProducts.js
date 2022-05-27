@@ -32,7 +32,11 @@ const ManageProducts = () => {
         if(proceed){
             const url = `http://localhost:5000/products/${id}`;
             fetch(url, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    'content-type': 'application/json',
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
             })
             .then(res => res.json())
             .then(data => {
@@ -49,26 +53,26 @@ const ManageProducts = () => {
             <title>Wrench Station-Manage Products</title>
         </Helmet>
             <h1 className='text-[#20242c] text-5xl mb-8 font-bold shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray] mx-[1vw] py-[1vw] rounded-lg'>Manage <span className='text-[goldenrod]'>Inventories</span></h1>
-            <div class="flex flex-col mx-8 ">
-                <div class="overflow-x-auto sm:-mx-6 lg:-mx-8 ">
-                    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8 ">
-                    <div class="overflow-hidden rounded-lg shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray]">
-                        <table class="min-w-full ">
-                            <thead class="bg-gray-100 border-b">
+            <div className="flex flex-col mx-8 ">
+                <div className="overflow-x-auto sm:-mx-6 lg:-mx-8 ">
+                    <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8 ">
+                    <div className="overflow-hidden rounded-lg shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray]">
+                        <table className="min-w-full ">
+                            <thead className="bg-gray-100 border-b">
                                 <tr>
-                                    <th scope="col" class="text-lg font-bold text-gray-900 px-6 py-4 ">
+                                    <th scope="col" className="text-lg font-bold text-gray-900 px-6 py-4 ">
                                         Product Image
                                     </th>
-                                    <th scope="col" class="text-lg font-bold text-gray-900 px-6 py-4 ">
+                                    <th scope="col" className="text-lg font-bold text-gray-900 px-6 py-4 ">
                                         Product Name
                                     </th>
-                                    <th scope="col" class="text-lg font-bold text-gray-900 px-6 py-4 ">
+                                    <th scope="col" className="text-lg font-bold text-gray-900 px-6 py-4 ">
                                         Product Price/PC
                                     </th>
-                                    <th scope="col" class="text-lg font-bold text-gray-900 px-6 py-4 ">
+                                    <th scope="col" className="text-lg font-bold text-gray-900 px-6 py-4 ">
                                         Product Stocked
                                     </th>
-                                    <th scope="col" class="text-lg font-bold text-gray-900 px-6 py-4 ">
+                                    <th scope="col" className="text-lg font-bold text-gray-900 px-6 py-4 ">
                                         Product Deletion
                                     </th>
                                 </tr>
@@ -77,20 +81,20 @@ const ManageProducts = () => {
                             {
                                 products.map(product =>
                                 
-                                    <tr key={product._id} class="bg-[#13151a] border-b transition duration-300 ease-in-out hover:bg-gray-400">
-                                        <td class="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap flex justify-center">
+                                    <tr key={product._id} className="bg-[#20242c] border-b transition duration-300 ease-in-out hover:bg-gray-400">
+                                        <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap flex justify-center">
                                             <img className="rounded-lg border-white w-full md:w-1/6" src={product.image} alt=""/>
                                         </td>
-                                        <td class="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
+                                        <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
                                             {product.name}
                                         </td>
-                                        <td class="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
+                                        <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
                                             ${product.price}.00
                                         </td>
-                                        <td class="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
+                                        <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
                                             {product.quantity}
                                         </td>
-                                        <td class="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
+                                        <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
                                             <button onClick={()=>handleOnDelete(product._id)} className='rounded-full bg-red-700 text-white py-3 px-4 shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray]'><FontAwesomeIcon className='text-white' icon={faTrashCan}></FontAwesomeIcon></button>
                                         </td>
                                     </tr>

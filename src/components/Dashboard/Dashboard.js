@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartArrowDown, faCartFlatbedSuitcase, faCircleUser, faDolly, faEnvelopeOpenText, faShieldHalved, faTableList, faUser, faUserShield } from '@fortawesome/free-solid-svg-icons';
+import { faCartArrowDown, faCartFlatbedSuitcase, faCircleUser, faDolly, faEnvelopeOpenText, faLayerGroup, faShieldHalved, faTableList, faUser, faUserShield } from '@fortawesome/free-solid-svg-icons';
 import Helmet from 'react-helmet';
 import axiosPrivate from '../../api/axiosPrivate';
 import { signOut } from 'firebase/auth';
@@ -107,6 +107,14 @@ const Dashboard = () => {
                                 </Link>
                             </li>
                         </ul>
+                        <ul className="relative px-1">
+                            <li className="relative">
+                                <Link to="/Dashboard/AddProducts" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
+                                <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faLayerGroup}></FontAwesomeIcon>
+                                    <span>Add Products</span>
+                                </Link>
+                            </li>
+                        </ul>
                     </>
                 }
                 </div>
@@ -166,6 +174,14 @@ const Dashboard = () => {
                                 <Link to="/Dashboard/ManageOrders" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
                                 <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faCartFlatbedSuitcase}></FontAwesomeIcon>
                                     <span>Manage Orders</span>
+                                </Link>
+                            </li>
+                        </ul>
+                        <ul className="relative px-1">
+                            <li className="relative">
+                                <Link to="/Dashboard/AddProducts" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
+                                <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faLayerGroup}></FontAwesomeIcon>
+                                    <span>Add Products</span>
                                 </Link>
                             </li>
                         </ul>

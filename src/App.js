@@ -20,6 +20,7 @@ import MakeAdmin from './components/Dashboard/MakeAdmin';
 import RequireAdmin from './components/RequireAdmin/RequireAdmin';
 import ManageProducts from './components/Dashboard/ManageProducts';
 import ManageOrders from './components/Dashboard/ManageOrders';
+import AddProducts from './components/Dashboard/AddProducts';
 // import AddItems from './components/AddItems/AddItems';
 // import MyItems from './components/MyItems/MyItems';
 
@@ -39,6 +40,7 @@ function App() {
           <Route path='/Dashboard/MakeAdmin' element={<RequireAdmin><MakeAdmin></MakeAdmin></RequireAdmin>}></Route>
           <Route path='/Dashboard/ManageProducts' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
           <Route path='/Dashboard/ManageOrders' element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>}></Route>
+          <Route path='/Dashboard/AddProducts' element={<RequireAdmin><AddProducts></AddProducts></RequireAdmin>}></Route>
         </Route>
         {/* <Route path='/Manage' element={<RequireAuth><Manage></Manage></RequireAuth>}></Route>
         <Route path='/Add' element={<RequireAuth><AddItems></AddItems></RequireAuth>}></Route>
