@@ -95,7 +95,7 @@ const MyOrders = () => {
                                 
                                     <tr key={order._id} className="bg-[#20242c] border-b transition duration-300 ease-in-out hover:bg-gray-400">
                                         <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap flex justify-center">
-                                            <img className="rounded-lg w-full md:w-1/6" src={order.productImage} alt=""/>
+                                            <img className="rounded-lg w-full md:w-3/6" src={order.productImage} alt=""/>
                                         </td>
                                         <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
                                             {order.productName}
@@ -141,7 +141,7 @@ const MyOrders = () => {
                                         </td>
                                         :
                                         <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
-                                            <span className='rounded-full text-[goldenrod] py-3 px-4'>Paid</span>
+                                            <span className='rounded-full text-[goldenrod] py-3 px-4'>Paid: {order.transactionId}</span>
                                         </td>
                                         }
                                     </tr>
