@@ -23,7 +23,6 @@ const Dashboard = () => {
             const url = `http://localhost:5000/user/${email}`;
             try{
                 const {data} = await axiosPrivate.get(url);
-                console.log(data[0]);
                 setUserInfo(data[0]);
             }
             catch(error){
@@ -56,32 +55,8 @@ const Dashboard = () => {
                         </div>
                     </a>
                 </div>
-                <ul className="relative px-1">
-                    <li className="relative">
-                        <Link to="/Dashboard" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
-                            <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faUser}></FontAwesomeIcon>
-                            <span>My Profile</span>
-                        </Link>
-                    </li>
-                </ul>
-                <ul className="relative px-1">
-                    <li className="relative">
-                        <Link to="/Dashboard/Orders" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
-                        <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faCartArrowDown}></FontAwesomeIcon>
-                            <span>My Orders</span>
-                        </Link>
-                    </li>
-                </ul>
-                <ul className="relative px-1">
-                    <li className="relative">
-                        <Link to="/Dashboard/Reviews" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
-                        <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faEnvelopeOpenText}></FontAwesomeIcon>
-                            <span>Add a Review</span>
-                        </Link>
-                    </li>
-                </ul>
                 {
-                    userInfo?.admin &&
+                    userInfo?.admin ?
                     <>
                         <ul className="relative px-1">
                             <li className="relative">
@@ -116,6 +91,33 @@ const Dashboard = () => {
                             </li>
                         </ul>
                     </>
+                    :
+                    <>
+                        <ul className="relative px-1">
+                            <li className="relative">
+                                <Link to="/Dashboard" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
+                                    <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faUser}></FontAwesomeIcon>
+                                    <span>My Profile</span>
+                                </Link>
+                            </li>
+                        </ul>
+                        <ul className="relative px-1">
+                            <li className="relative">
+                                <Link to="/Dashboard/Orders" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
+                                <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faCartArrowDown}></FontAwesomeIcon>
+                                    <span>My Orders</span>
+                                </Link>
+                            </li>
+                        </ul>
+                        <ul className="relative px-1">
+                            <li className="relative">
+                                <Link to="/Dashboard/Reviews" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
+                                <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faEnvelopeOpenText}></FontAwesomeIcon>
+                                    <span>Add a Review</span>
+                                </Link>
+                            </li>
+                        </ul>
+                    </>
                 }
                 </div>
             </div>
@@ -134,24 +136,8 @@ const Dashboard = () => {
                         </Link>
                     </li>
                 </ul>
-                <ul className="relative px-1">
-                    <li className="relative">
-                        <Link to="/Dashboard/Orders" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
-                        <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faCartArrowDown}></FontAwesomeIcon>
-                            <span>My Orders</span>
-                        </Link>
-                    </li>
-                </ul>
-                <ul className="relative px-1">
-                    <li className="relative">
-                        <Link to="/Dashboard/Reviews" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
-                        <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faEnvelopeOpenText}></FontAwesomeIcon>
-                            <span>Add a Review</span>
-                        </Link>
-                    </li>
-                </ul>
                 {
-                    userInfo?.admin &&
+                    userInfo?.admin ?
                     <>
                         <ul className="relative px-1">
                             <li className="relative">
@@ -182,6 +168,25 @@ const Dashboard = () => {
                                 <Link to="/Dashboard/AddProducts" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
                                 <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faLayerGroup}></FontAwesomeIcon>
                                     <span>Add Products</span>
+                                </Link>
+                            </li>
+                        </ul>
+                    </>
+                    :
+                    <>
+                        <ul className="relative px-1">
+                            <li className="relative">
+                                <Link to="/Dashboard/Orders" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
+                                <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faCartArrowDown}></FontAwesomeIcon>
+                                    <span>My Orders</span>
+                                </Link>
+                            </li>
+                        </ul>
+                        <ul className="relative px-1">
+                            <li className="relative">
+                                <Link to="/Dashboard/Reviews" className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-[#20242c] text-ellipsis whitespace-nowrap rounded hover:text-[goldenrod] hover:bg-blue-50 transition duration-300 ease-in-out font-bold" data-mdb-ripple="true" data-mdb-ripple-color="primary">
+                                <FontAwesomeIcon className='text-[goldenrod] text-sm mr-3' icon={faEnvelopeOpenText}></FontAwesomeIcon>
+                                    <span>Add a Review</span>
                                 </Link>
                             </li>
                         </ul>
