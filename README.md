@@ -31,4 +31,5 @@
 * React query for fetching url.
 * React toastify for toast.
 * React leaflet for map.
+* Used axios interceptor.
 * Stripe js for payment.
