@@ -38,18 +38,13 @@ const Header = () => {
                     {
                         user ?
                             <div className='md:flex justify-center'>
-                                {/* <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-white hover:text-black md:font-bold border-b-2 border-white hover:shadow-xl hover:shadow-[gray]' to="/Manage">MANAGE_ITEMS</CustomLink>
-                                <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-white hover:text-black md:font-bold border-b-2 border-white hover:shadow-xl hover:shadow-[gray]' to="/Add">ADD_ITEMS</CustomLink>
-                                <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-white hover:text-black md:font-bold border-b-2 border-white hover:shadow-xl hover:shadow-[gray]' to="/MyItems">MY_ITEMS</CustomLink>
-                                <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-white hover:text-black md:font-bold border-b-2 border-white hover:shadow-xl hover:shadow-[gray]' to="/Blogs">BLOGS</CustomLink>
-                                <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-white hover:text-black md:font-bold border-b-2 border-white hover:shadow-xl hover:shadow-[gray]' to="/About">ABOUT</CustomLink> */}
-                                <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-gray-600 hover:text-gray-900 md:font-bold border-b-4 border-white' to='/Dashboard'>Dashboard</CustomLink>
+                                <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-gray-600 hover:text-gray-900 md:font-bold border-b-4 border-white' to='/Dashboard'>DASHBOARD</CustomLink>
+                                <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-gray-600 hover:text-gray-900 md:font-bold border-b-4 border-white' to="/About">PORTFOLIO</CustomLink>
                                 <CustomLink onClick={handleSignOut} className='mr-[2vw] md:py-[5px] px-[20px] text-gray-600 hover:text-gray-900 md:font-bold border-b-4 border-white' to='/Login'>LOG OUT</CustomLink>
                             </div>
                         :
                         <div className='md:flex justify-center'>
-                            {/* <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-white hover:text-black md:font-bold border-b-2 border-white hover:shadow-xl hover:shadow-[gray]' to="/Blogs">BLOGS</CustomLink>
-                            <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-white hover:text-black md:font-bold border-b-2 border-white hover:shadow-xl hover:shadow-[gray]' to="/About">ABOUT</CustomLink> */}
+                            <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-white hover:text-black md:font-bold border-b-2 border-white hover:shadow-xl hover:shadow-[gray]' to="/About">ABOUT</CustomLink>
                             <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-gray-600 hover:text-gray-900 md:font-bold border-b-4 border-white' to="/Login">LOG IN</CustomLink>
                             <CustomLink className='mr-[2vw] md:py-[5px] px-[20px] text-gray-600 hover:text-gray-900 md:font-bold border-b-4 border-white' to="/Register">REGISTER</CustomLink> 
                         </div>

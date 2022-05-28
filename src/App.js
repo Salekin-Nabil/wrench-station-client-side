@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import { Route, Routes } from 'react-router-dom';
 import Blogs from './components/Blogs/Blogs';
-// import About from './components/About/About';
+import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
@@ -46,8 +46,8 @@ function App() {
         </Route>
         {/* <Route path='/Manage' element={<RequireAuth><Manage></Manage></RequireAuth>}></Route>
         <Route path='/Add' element={<RequireAuth><AddItems></AddItems></RequireAuth>}></Route>
-        <Route path='/MyItems' element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route>
-        <Route path='/About' element={<About></About>}></Route> */}
+        <Route path='/MyItems' element={<RequireAuth><MyItems></MyItems></RequireAuth>}></Route> */}
+        <Route path='/About' element={<About></About>}></Route>
         <Route path='/Login' element={<Login></Login>}></Route>
         <Route path='/Register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
