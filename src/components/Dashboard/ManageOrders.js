@@ -91,7 +91,7 @@ const ManageOrders = () => {
     };
 
     return (
-        <div>
+        <div className='mb-24'>
         <Helmet>
             <title>Wrench Station-Manage Orders</title>
         </Helmet>
@@ -191,7 +191,6 @@ const ManageOrders = () => {
                         <option value="20" >20</option>
                     </select> */}
             </div>
-                <button onClick={()=>navigate('/Add')} className='rounded-3xl text-white text-2xl font-semibold bg-[goldenrod] active:bg-[#af810c] focus:bg-[#b3840c] hover:bg-[#c4900b] shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray] my-20 py-2 px-20 md:px-60 lg:px-[550px]'>Add New Item</button>
         </div>
     );
 };
