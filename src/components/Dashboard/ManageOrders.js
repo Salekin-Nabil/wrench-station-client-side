@@ -26,6 +26,7 @@ const ManageOrders = () => {
     // }, [page]);
 
     const [orders, setOrders] = useProducts("http://localhost:5000/orders");
+    const [products, setProducts] = useProducts("http://localhost:5000/products");
 
     const handleOnShipped = id =>{
         const data = {
@@ -45,7 +46,26 @@ const ManageOrders = () => {
         .then(result =>{
             fetch("http://localhost:5000/orders")
             .then(res=>res.json())
-            .then(data=>setOrders(data));
+            .then(data=>{
+                setOrders(data);
+
+                const order = orders.find( ({ _id }) => _id === id );
+                const product = products.find( ({ _id }) => _id === order.productId );
+                let updatedProduct = product.quantity - order.quantity;
+                const url = `http://localhost:5000/products/${product._id}`;
+                fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedProduct)
+                })
+                .then(res => res.json())
+                .then(data =>{
+                    console.log('success', data);
+                    toast('The products inventory has been successfully updated!!!');
+                })
+            });
             toast('Successfully shipped the order.')
         });
     };

@@ -95,7 +95,7 @@ const ManageProducts = () => {
                                             {product.quantity}
                                         </td>
                                         <td className="text-lg text-white font-semibold px-6 py-4 whitespace-nowrap">
-                                            <button onClick={()=>handleOnDelete(product._id)} className='rounded-full bg-red-700 text-white py-3 px-4 shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray]'><FontAwesomeIcon className='text-white' icon={faTrashCan}></FontAwesomeIcon></button>
+                                            <button onClick={()=>handleOnDelete(product._id)} className='rounded-full bg-red-700 text-white py-3 px-4 shadow-lg shadow-[gray] hover:shadow-xl hover:shadow-[gray]  transition duration-150 ease-in-out' data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><FontAwesomeIcon className='text-white' icon={faTrashCan}></FontAwesomeIcon></button>
                                         </td>
                                     </tr>
                                 )
