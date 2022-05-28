@@ -23,7 +23,7 @@ const Profile = () => {
     const [userInfo, setUserInfo] = useState({});
 
     // useEffect ( ()=>{
-    //     fetch(`http://localhost:5000/user/${email}`)
+    //     fetch(`https://ancient-scrubland-39146.herokuapp.com/user/${email}`)
     //     .then(res=> res.json())
     //     .then(data=>{
     //         console.log(data);
@@ -34,7 +34,7 @@ const Profile = () => {
     useEffect( () => {
         const getUser = async() =>{
             const email = user.email;
-            const url = `http://localhost:5000/user/${email}`;
+            const url = `https://ancient-scrubland-39146.herokuapp.com/user/${email}`;
             try{
                 const {data} = await axiosPrivate.get(url);
                 setUserInfo(data[0]);
@@ -61,7 +61,7 @@ const Profile = () => {
         };
         console.log(data);
         
-        const url = `http://localhost:5000/userUpdate/${email}`;
+        const url = `https://ancient-scrubland-39146.herokuapp.com/userUpdate/${email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

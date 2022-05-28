@@ -4,7 +4,7 @@ import useProducts from '../../Hooks/useProducts';
 import Product from '../Product/Product';
 
 const Products = () => {
-    const [products, setProducts] = useProducts("http://localhost:5000/products_6");
+    const [products, setProducts] = useProducts("https://ancient-scrubland-39146.herokuapp.com/products_6");
     const navigate = useNavigate();
     
     return (

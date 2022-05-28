@@ -26,7 +26,7 @@ const AddProducts = () => {
             "description": descriptionRef.current.value
         };
         console.log(data);
-        const url = `http://localhost:5000/products`;
+        const url = `https://ancient-scrubland-39146.herokuapp.com/products`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -40,7 +40,7 @@ const AddProducts = () => {
             console.log(result);
             toast('The new product is successfully added.');
         } );
-        // const url1 = `http://localhost:5000/stock`;
+        // const url1 = `https://ancient-scrubland-39146.herokuapp.com/stock`;
         // fetch(url1, {
         //     method: 'POST',
         //     headers: {

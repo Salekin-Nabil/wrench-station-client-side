@@ -21,7 +21,7 @@ const MakeAdmin = () => {
     useEffect( () => {
         const getUser = async() =>{
             
-            const url = `http://localhost:5000/userAll/${email}`;
+            const url = `https://ancient-scrubland-39146.herokuapp.com/userAll/${email}`;
             try{
                 const {data} = await axiosPrivate.get(url);
                 setUserInfo(data);
@@ -42,7 +42,7 @@ const MakeAdmin = () => {
             "admin": true
         };
         
-        const url = `http://localhost:5000/userAdmin/${userEmail}`;
+        const url = `https://ancient-scrubland-39146.herokuapp.com/userAdmin/${userEmail}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -55,7 +55,7 @@ const MakeAdmin = () => {
         .then(result =>{
                 const getUser = async() =>{
             
-                    const url = `http://localhost:5000/userAll/${email}`;
+                    const url = `https://ancient-scrubland-39146.herokuapp.com/userAll/${email}`;
                     try{
                         const {data} = await axiosPrivate.get(url);
                         setUserInfo(data);

@@ -10,13 +10,13 @@ const ManageOrders = () => {
     const navigate = useNavigate();
 
     // useEffect( () =>{
-    //     fetch(`http://localhost:5000/product?page=${page}&size=${size}`)
+    //     fetch(`https://ancient-scrubland-39146.herokuapp.com/product?page=${page}&size=${size}`)
     //     .then(res => res.json())
     //     .then(data => setProducts(data));
     // }, [page, size]);
 
     // useEffect( () =>{
-    //     fetch('http://localhost:5000/productCount')
+    //     fetch('https://ancient-scrubland-39146.herokuapp.com/productCount')
     //     .then(res => res.json())
     //     .then(data =>{
     //         const count = data.count;
@@ -25,15 +25,15 @@ const ManageOrders = () => {
     //     })
     // }, [page]);
 
-    const [orders, setOrders] = useProducts("http://localhost:5000/orders");
-    const [products, setProducts] = useProducts("http://localhost:5000/products");
+    const [orders, setOrders] = useProducts("https://ancient-scrubland-39146.herokuapp.com/orders");
+    const [products, setProducts] = useProducts("https://ancient-scrubland-39146.herokuapp.com/products");
 
     const handleOnShipped = id =>{
         const data = {
             "status": "approved"
         };
         
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://ancient-scrubland-39146.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -44,7 +44,7 @@ const ManageOrders = () => {
         })
         .then(res=> res.json())
         .then(result =>{
-            fetch("http://localhost:5000/orders")
+            fetch("https://ancient-scrubland-39146.herokuapp.com/orders")
             .then(res=>res.json())
             .then(data=>{
                 setOrders(data);
@@ -52,7 +52,7 @@ const ManageOrders = () => {
                 const order = orders.find( ({ _id }) => _id === id );
                 const product = products.find( ({ _id }) => _id === order.productId );
                 let updatedProduct = product.quantity - order.quantity;
-                const url = `http://localhost:5000/products/${product._id}`;
+                const url = `https://ancient-scrubland-39146.herokuapp.com/products/${product._id}`;
                 fetch(url, {
                     method: 'PUT',
                     headers: {
@@ -73,7 +73,7 @@ const ManageOrders = () => {
     const handleOnDelete = id =>{
         const proceed = window.confirm('Are you sure?');
         if(proceed){
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://ancient-scrubland-39146.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE',
                 headers: {

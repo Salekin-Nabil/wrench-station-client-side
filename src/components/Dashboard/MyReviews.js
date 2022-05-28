@@ -27,7 +27,7 @@ const MyReviews = () => {
         };
         console.log(data);
         
-        const url = `http://localhost:5000/reviews/${email}`;
+        const url = `https://ancient-scrubland-39146.herokuapp.com/reviews/${email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

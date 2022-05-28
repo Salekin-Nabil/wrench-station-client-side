@@ -16,7 +16,7 @@ const ProductDetails = () => {
     const [amount, setAmount] = useState(0);
     const [products, setProducts] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/products/${params.productId}`)
+        fetch(`https://ancient-scrubland-39146.herokuapp.com/products/${params.productId}`)
         .then(res=>res.json())
         .then(data=>{setProducts(data)
         setAmount(data.minQuantity)
@@ -54,7 +54,7 @@ const ProductDetails = () => {
         };
         console.log(data);
         
-        const url = `http://localhost:5000/orders`;
+        const url = `https://ancient-scrubland-39146.herokuapp.com/orders`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -110,7 +110,7 @@ const ProductDetails = () => {
 
 
     //     // send data to the server
-    //     const url = `http://localhost:5000/products/${_id}`;
+    //     const url = `https://ancient-scrubland-39146.herokuapp.com/products/${_id}`;
     //     fetch(url, {
     //         method: 'PUT',
     //         headers: {
@@ -138,7 +138,7 @@ const ProductDetails = () => {
     //     const newProduct = {quantity, ...rest};
 
     //     // send data to the server
-    //     const url = `http://localhost:5000/products/${_id}`;
+    //     const url = `https://ancient-scrubland-39146.herokuapp.com/products/${_id}`;
     //     fetch(url, {
     //         method: 'PUT',
     //         headers: {

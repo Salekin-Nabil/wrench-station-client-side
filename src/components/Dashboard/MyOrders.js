@@ -16,7 +16,7 @@ const MyOrders = () => {
         
         const getProducts = async() =>{
             const email = user.email;
-            const url = `http://localhost:5000/myOrders?buyer=${email}`;
+            const url = `https://ancient-scrubland-39146.herokuapp.com/myOrders?buyer=${email}`;
             try{
                 const {data} = await axiosPrivate.get(url);
                 setOrders(data);
@@ -36,7 +36,7 @@ const MyOrders = () => {
     const handleOnDelete = id =>{
         const proceed = window.confirm('Are you sure?');
         if(proceed){
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://ancient-scrubland-39146.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE',
                 headers: {

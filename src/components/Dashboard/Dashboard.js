@@ -20,7 +20,7 @@ const Dashboard = () => {
     useEffect( () => {
         const getUser = async() =>{
             
-            const url = `http://localhost:5000/user/${email}`;
+            const url = `https://ancient-scrubland-39146.herokuapp.com/user/${email}`;
             try{
                 const {data} = await axiosPrivate.get(url);
                 setUserInfo(data[0]);

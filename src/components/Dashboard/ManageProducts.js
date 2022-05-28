@@ -9,13 +9,13 @@ const ManageProducts = () => {
     const navigate = useNavigate();
 
     // useEffect( () =>{
-    //     fetch(`http://localhost:5000/product?page=${page}&size=${size}`)
+    //     fetch(`https://ancient-scrubland-39146.herokuapp.com/product?page=${page}&size=${size}`)
     //     .then(res => res.json())
     //     .then(data => setProducts(data));
     // }, [page, size]);
 
     // useEffect( () =>{
-    //     fetch('http://localhost:5000/productCount')
+    //     fetch('https://ancient-scrubland-39146.herokuapp.com/productCount')
     //     .then(res => res.json())
     //     .then(data =>{
     //         const count = data.count;
@@ -24,13 +24,13 @@ const ManageProducts = () => {
     //     })
     // }, [page]);
 
-    const [products, setProducts] = useProducts("http://localhost:5000/products");
+    const [products, setProducts] = useProducts("https://ancient-scrubland-39146.herokuapp.com/products");
 
     
     const handleOnDelete = id =>{
         const proceed = window.confirm('Are you sure?');
         if(proceed){
-            const url = `http://localhost:5000/products/${id}`;
+            const url = `https://ancient-scrubland-39146.herokuapp.com/products/${id}`;
             fetch(url, {
                 method: 'DELETE',
                 headers: {
