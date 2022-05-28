@@ -239,8 +239,8 @@ const Footer = () => {
             </div>
 
             <div className="text-center p-4 bg-[#12151a]">
-                © 2022 Copyright:
-                <a className="text-white" href="https://tailwind-elements.com/">Salekin Nabil</a>
+                &copy; 2022 Copyright:
+                <span className="text-white">Salekin Nabil</span>
             </div>
         </footer>
     );

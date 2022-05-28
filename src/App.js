@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/Header/Header';
 import { Route, Routes } from 'react-router-dom';
-// import Blogs from './components/Blogs/Blogs';
+import Blogs from './components/Blogs/Blogs';
 // import About from './components/About/About';
 import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
@@ -32,7 +32,7 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        {/* <Route path='/Blogs' element={<Blogs></Blogs>}></Route> */}
+        <Route path='/Blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/Inventory/:productId' element={<RequireAuth><ProductDetails></ProductDetails></RequireAuth>}></Route>
         <Route path='/Dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<Profile></Profile>}></Route>
