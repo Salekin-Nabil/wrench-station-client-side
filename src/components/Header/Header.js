@@ -3,8 +3,6 @@ import { MenuIcon, XIcon } from '@heroicons/react/solid'
 import CustomLink from '../CustomLink/CustomLink';
 import logo from '../../images/logo.png';
 import './Header.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDumbbell } from '@fortawesome/free-solid-svg-icons';
 import { signOut } from 'firebase/auth';
 import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -16,7 +14,6 @@ const Header = () => {
 
     const [user] = useAuthState(auth);
 
-    console.log(user);
     const handleSignOut = () =>{
         signOut(auth);
     }
